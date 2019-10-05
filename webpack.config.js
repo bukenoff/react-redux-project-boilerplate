@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader')
 
 const outputDirectory = 'dist';
 
@@ -78,7 +77,6 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new CheckerPlugin(),
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
