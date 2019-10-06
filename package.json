@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --devtool inline-source-map --hot"
+    "start": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+    "storybook": "start-storybook"
   },
   "keywords": [],
   "author": "serik",
@@ -28,7 +29,10 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-a11y": "^5.2.1",
+    "@storybook/addon-knobs": "^5.2.1",
     "@storybook/react": "^5.2.1",
+    "@types/storybook__react": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "babel-eslint": "^10.0.0",
