@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "test": "jest"
   },
   "keywords": [],
   "author": "serik",
@@ -32,6 +33,7 @@
     "@storybook/addon-a11y": "^5.2.1",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/react": "^5.2.1",
+    "@types/jest": "^25.1.4",
     "@types/storybook__react": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
@@ -47,12 +49,14 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^25.1.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
     "sass-resources-loader": "^2.0.1",
     "style-loader": "^0.23.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.10.1",
+    "ts-jest": "^25.2.1",
     "ts-loader": "^5.4.5",
     "typescript": "^3.4.5",
     "url-loader": "^1.0.1",
