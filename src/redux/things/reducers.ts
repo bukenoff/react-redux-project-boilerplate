@@ -1,7 +1,7 @@
+import { createReducer } from '@reduxjs/toolkit';
 import { ACTION_TYPES as TYPES } from './constants';
 import { ThingsState } from './types';
 import { Handler } from '~/types';
-import { createReducer } from '~/utils/createReducer';
 import * as actions from './actions';
 
 const initialState: ThingsState = {
