@@ -13,6 +13,7 @@
   },
   "plugins": ["@typescript-eslint", "react-hooks"],
   "rules": {
+    "arrow-body-style": 0,
     "semi": 0,
     "curly": ["error", "all"],
     "valid-jsdoc": "error",

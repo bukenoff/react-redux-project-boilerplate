@@ -4,7 +4,7 @@ import { State } from '~/types';
 import * as styles from './styles.scss';
 import * as actions from '~/redux/things/actions';
 
-import { ExampleComponent } from '~/components/ExampleComponent';
+import ExampleComponent from '~/components/ExampleComponent';
 
 const mapStateToProps = ({ things }: State) => ({
   things_list: things.things_list,
@@ -27,7 +27,7 @@ const ExampleContainer: FC<Props> = ({
   );
 };
 
-export default connect(
+export const ExampleContainerConnected = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ExampleContainer);
