@@ -18,6 +18,6 @@ ThingsState,
 
 export const HANDLERS = {
   [TYPES.ADD_THING]: addThingHanlder,
-}
+};
 
 export default createReducer(initialState, HANDLERS);

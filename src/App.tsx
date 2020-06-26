@@ -9,7 +9,7 @@ import ExampleContainer from './containers/ExampleContainer';
 require('./styles/reset.scss');
 require('./styles/global.scss');
 
-const App: FC<{}> = () => {
+const App: FC = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -18,7 +18,7 @@ const App: FC<{}> = () => {
         </Router>
       </PersistGate>
     </Provider>
-  )
-}
+  );
+};
 
 export default App;

@@ -9,4 +9,4 @@ storiesOf('ExampleComponent', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <ExampleComponent text={text('text', 'hi')} />
-  ))
+  ));

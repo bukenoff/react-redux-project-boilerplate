@@ -7,7 +7,7 @@ import thingsReducer from './things/reducers';
 const thingsPersistConfig = {
   key: 'auth',
   storage,
-}
+};
 
 const rootReducer = () => combineReducers({
   things: persistReducer(thingsPersistConfig, thingsReducer),

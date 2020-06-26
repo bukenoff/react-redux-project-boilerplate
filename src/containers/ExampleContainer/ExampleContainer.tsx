@@ -12,7 +12,7 @@ const mapStateToProps = ({ things }: State) => ({
 
 const mapDispatchToProps = {
   addThing: actions.addThing,
-}
+};
 
 type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps & {};
 
