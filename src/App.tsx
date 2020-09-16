@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './redux/store';
+import { ConnectedRouter } from 'connected-react-router';
 
+import { store, persistor, history } from './redux/store';
 import ExampleContainer from './containers/ExampleContainer';
 
 require('./styles/reset.scss');
@@ -13,9 +14,9 @@ const App: FC = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Router>
+        <ConnectedRouter history={history}>
           <Route exact path="/" component={ExampleContainer} />
-        </Router>
+        </ConnectedRouter>
       </PersistGate>
     </Provider>
   );
