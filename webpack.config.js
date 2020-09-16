@@ -2,17 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const outputDirectory = 'dist';
 const isDevelopment = process.env.NODE_ENV === 'development';
-
-console.log('IS DEVELOPMENT??', isDevelopment);
 
 module.exports = {
   entry: ['react-hot-loader/patch', './src/index.tsx'],
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: 'bundle.js',
+    filename: "[name].[hash].js",
     publicPath: '/'
   },
   resolve: {
@@ -82,6 +82,35 @@ module.exports = {
     port: 3000,
     open: true,
     historyApiFallback: true
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendor',
+          chunks: 'all',
+          test: /node_modules/,
+          priority: 20,
+          reuseExistingChunk: true
+        },
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minChunks: 2,
+          minSize: 0,
+          reuseExistingChunk: true
+        }
+      }
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false,
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
+    occurrenceOrder: true
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
