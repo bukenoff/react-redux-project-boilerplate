@@ -1,12 +1,12 @@
 import { ThingsState } from './redux/things/types';
 // import { OtherModuleState } from './redux/other_module/types';
 
-export type Handler<P, T> = (
-  state: P,
+export type ThingsHandler<T = undefined> = (
+  state: ThingsState,
   payload: T extends (...args: any[]) => infer R ? R : any,
-) => P
+) => void | ThingsState
 
-export type State = Readonly<{
+export interface State {
   things: ThingsState;
   // other_module: OtherModuleState;
-}>
+}
