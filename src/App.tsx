@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './store';
+import { store, persistor } from './redux/store';
 
 import ExampleContainer from './containers/ExampleContainer';
 
