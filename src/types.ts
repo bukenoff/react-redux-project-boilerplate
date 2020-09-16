@@ -10,3 +10,7 @@ export interface State {
   things: ThingsState;
   // other_module: OtherModuleState;
 }
+
+export enum ThingsActions {
+  ADD_THING = 'ADD_THING'
+}

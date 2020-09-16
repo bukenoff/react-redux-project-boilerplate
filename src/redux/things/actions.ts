@@ -1,8 +1,13 @@
-import { ACTION_TYPES as TYPES } from './constants';
+import { createAction } from '@reduxjs/toolkit';
+import { ThingsActions } from '~/types';
 import { IThing } from './types';
 
-export const addThing = (thing: IThing) => ({
-  type: TYPES.ADD_THING,
-  thing,
-});
+export const addThing = createAction(
+  ThingsActions.ADD_THING,
+  (thing: IThing) => ({
+    payload: {
+      thing,
+    },
+  })
+);
 
