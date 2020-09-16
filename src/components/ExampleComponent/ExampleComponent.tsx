@@ -9,7 +9,7 @@ const ExampleComponent: FC<Props> = ({
   text,
 }) => {
   return (
-    <div data-testid="example-component">
+    <div data-testid="example-component" className={styles.container}>
       <h1>{text}</h1>
     </div>
   );
