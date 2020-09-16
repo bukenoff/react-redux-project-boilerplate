@@ -1,8 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const outputDirectory = 'dist';
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+console.log('IS DEVELOPMENT??', isDevelopment);
 
 module.exports = {
   entry: ['react-hot-loader/patch', './src/index.tsx'],
@@ -18,6 +22,7 @@ module.exports = {
       'react-dom': '@hot-loader/react-dom'
     }
   },
+  devtool: isDevelopment ? 'inline-source-map' : undefined,
   module: {
     rules: [
       {
@@ -42,7 +47,9 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: isDevelopment
+              ? 'style-loader'
+              : MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -81,6 +88,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico'
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ]
 };

@@ -6,7 +6,7 @@
     "module": "commonjs",
     "allowJs": true,
     "jsx": "react",
-    "sourceMap": false,
+    "sourceMap": true,
     "outDir": "./dist/",
     "strict": true,
     "noImplicitAny": false,
