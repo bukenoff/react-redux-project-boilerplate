@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import * as styles from './styles.scss';
 
-interface IProps {
+interface Props {
   text: string;
 }
 
-const ExampleComponent: FC<IProps> = ({
+const ExampleComponent: FC<Props> = ({
   text,
 }) => {
   return (
@@ -15,4 +15,4 @@ const ExampleComponent: FC<IProps> = ({
   );
 };
 
-export { ExampleComponent };
+export { ExampleComponent, Props };
