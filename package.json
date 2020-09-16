@@ -1,7 +1,7 @@
 {
-  "name": "todo",
+  "name": "react-project-boilerplate",
   "version": "1.0.0",
-  "description": "react app",
+  "description": "greatest boilerplate you can ever find",
   "main": "src/index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --mode production",
@@ -10,6 +10,9 @@
     "test:watch": "jest --watchAll",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "url": "https://github.com/Bukenov-s/react-project-boilerplate"
   },
   "keywords": [],
   "author": "serik",
