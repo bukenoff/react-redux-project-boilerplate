@@ -9,7 +9,7 @@ const ExampleComponent: FC<IProps> = ({
   text,
 }) => {
   return (
-    <div>
+    <div data-testid="example-component">
       <h1>{text}</h1>
     </div>
   );
