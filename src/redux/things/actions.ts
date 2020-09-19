@@ -8,6 +8,5 @@ export const addThing = createAction(
     payload: {
       thing,
     },
-  })
+  }),
 );
-
