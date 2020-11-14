@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { Thing } from './types';
+import { Thing } from './things.types';
 
 export const addThing = createAction('ADD_THING', (thing: Thing) => ({
   payload: {

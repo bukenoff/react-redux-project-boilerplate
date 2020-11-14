@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import { connectRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 
-import thingsReducer from './things/reducers';
+import thingsReducer from './things/things.reducers';
 // import moduleNameReducer from './module_folder_name/reducers';
 
 const thingsPersistConfig = {

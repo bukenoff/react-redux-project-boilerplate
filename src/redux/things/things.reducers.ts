@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { ThingsState } from './types';
-import { addThing } from './actions';
+import { ThingsState } from './things.types';
+import { addThing } from './things.actions';
 
 const initialState: ThingsState = {
   things_list: [],

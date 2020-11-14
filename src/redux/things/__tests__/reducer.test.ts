@@ -1,6 +1,6 @@
-import reducer from '../reducers';
-import * as actions from '../actions';
-import { ThingsState, Thing } from '../types';
+import reducer from '../things.reducers';
+import * as actions from '../things.actions';
+import { ThingsState, Thing } from '../things.types';
 
 describe('things reducer', () => {
   const initial_state: ThingsState = {
@@ -21,8 +21,8 @@ describe('things reducer', () => {
       things_list: [new_thing],
     };
 
-    expect(
-      reducer(initial_state, actions.addThing(new_thing))
-    ).toEqual(result_state);
+    expect(reducer(initial_state, actions.addThing(new_thing))).toEqual(
+      result_state,
+    );
   });
 });
