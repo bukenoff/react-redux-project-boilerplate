@@ -3,7 +3,7 @@
     "target": "es5",
     "downlevelIteration": true,
     "lib": ["esnext", "dom"],
-    "module": "commonjs",
+    "module": "esnext",
     "jsx": "react",
     "sourceMap": true,
     "outDir": "./dist/",
