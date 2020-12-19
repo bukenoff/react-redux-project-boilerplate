@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -13,15 +14,15 @@ module.exports = {
   entry: ['react-hot-loader/patch', './src/index.tsx'],
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: "[name].[hash].js",
-    publicPath: '/'
+    filename: '[name].[hash].js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     alias: {
       '~': path.resolve(__dirname, 'src/'),
-      'react-dom': '@hot-loader/react-dom'
-    }
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   devtool: isDevelopment ? 'inline-source-map' : undefined,
   module: {
@@ -30,8 +31,8 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(ts|tsx)$/,
@@ -42,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.scss$/,
@@ -75,14 +76,14 @@ module.exports = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
-      }
-    ]
+        loader: 'url-loader?limit=100000',
+      },
+    ],
   },
   devServer: {
     port: 3000,
     open: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   optimization: {
     splitChunks: {
@@ -92,16 +93,16 @@ module.exports = {
           chunks: 'all',
           test: /node_modules/,
           priority: 20,
-          reuseExistingChunk: true
+          reuseExistingChunk: true,
         },
         commons: {
           name: 'commons',
           chunks: 'initial',
           minChunks: 2,
           minSize: 0,
-          reuseExistingChunk: true
-        }
-      }
+          reuseExistingChunk: true,
+        },
+      },
     },
     minimizer: [
       new TerserPlugin({
@@ -110,19 +111,19 @@ module.exports = {
           ecma: 6,
         },
       }),
-      new OptimizeCSSAssetsPlugin({})
+      new OptimizeCSSAssetsPlugin({}),
     ],
-    occurrenceOrder: true
+    occurrenceOrder: true,
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.ico'
+      favicon: './public/favicon.ico',
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ]
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+  ],
 };
