@@ -6,8 +6,8 @@ import { createBrowserHistory } from 'history';
 import root_saga from './root.saga';
 import root_reducer from './root.reducer';
 
-const initialState = {};
-const sagaMiddleware = createSagaMiddleware();
+const initial_state = {};
+const saga_middleware = createSagaMiddleware();
 const history = createBrowserHistory();
 
 /* eslint-disable */
@@ -20,12 +20,12 @@ const composeEnhancers =
 
 const store = createStore(
   root_reducer(history),
-  initialState,
-  composeEnhancers(applyMiddleware(sagaMiddleware)),
+  initial_state,
+  composeEnhancers(applyMiddleware(saga_middleware)),
 );
 
 const persistor = persistStore(store);
 
-sagaMiddleware.run(root_saga);
+saga_middleware.run(root_saga);
 
 export { store, persistor, history };
