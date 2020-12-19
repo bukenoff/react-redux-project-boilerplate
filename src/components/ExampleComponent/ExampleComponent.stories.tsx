@@ -13,6 +13,5 @@ const Template: Story<Props> = (args) => <ExampleComponent {...args} />;
 export const ExampleComponentWithHelloText = Template.bind({});
 
 ExampleComponentWithHelloText.args = {
-  text: 'Hello'
+  text: 'Hello',
 };
-
