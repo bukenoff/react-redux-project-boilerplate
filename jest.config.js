@@ -6,4 +6,5 @@ module.exports = {
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+  coverageReporters: ['json-summary'],
 };
