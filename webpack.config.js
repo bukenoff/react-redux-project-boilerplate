@@ -5,12 +5,19 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const webpack = require('webpack');
 
 const outputDirectory = 'dist';
 const isDevelopment = process.env.NODE_ENV === 'development';
+const PORT = 3000;
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: [
+    `webpack-dev-server/client?http://localhost:${PORT}`,
+    'webpack/hot/only-dev-server',
+    './src/index.tsx',
+  ],
+  //context: path.resolve(__dirname, 'src'),
   output: {
     path: path.join(__dirname, outputDirectory),
     filename: '[name].[hash].js',
@@ -72,8 +79,13 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 3000,
+    port: PORT,
     open: true,
+    hot: true,
+    noInfo: false,
+    quiet: false,
+    contentBase: path.resolve(__dirname, 'src'),
+    publicPath: '/',
     historyApiFallback: true,
   },
   optimization: {
@@ -116,5 +128,6 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
