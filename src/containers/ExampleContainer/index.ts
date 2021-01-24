@@ -1,3 +1,3 @@
-import { ExampleContainerConnected as ExampleContainer } from './ExampleContainer';
+import { ExampleContainer } from './ExampleContainer';
 
 export default ExampleContainer;
