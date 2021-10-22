@@ -1,3 +1,4 @@
+import * as Sentry from '@sentry/react';
 import React, { FC } from 'react';
 import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -6,9 +7,12 @@ import { ConnectedRouter } from 'connected-react-router';
 
 import { store, persistor, history } from './redux/store';
 import ExampleContainer from './containers/ExampleContainer';
+import { initSentry } from './services/sentry';
 
 require('./styles/reset.scss');
 require('./styles/global.scss');
+
+initSentry();
 
 const App: FC = () => {
   return (
@@ -22,4 +26,4 @@ const App: FC = () => {
   );
 };
 
-export default App;
+export default Sentry.withProfiler(App);
