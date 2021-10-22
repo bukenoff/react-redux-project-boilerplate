@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import * as React from 'react';
 import * as styles from './styles.scss';
 
-interface Props {
+export interface Props {
   text: string;
 }
 
-const ExampleComponent: FC<Props> = ({ text }) => {
+const ExampleComponent: React.FC<Props> = ({ text }) => {
   return (
     <div data-testid="example-component" className={styles.container}>
       <h1>{text}</h1>
@@ -13,4 +13,4 @@ const ExampleComponent: FC<Props> = ({ text }) => {
   );
 };
 
-export { ExampleComponent, Props };
+export { ExampleComponent };

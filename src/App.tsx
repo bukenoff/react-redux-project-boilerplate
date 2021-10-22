@@ -9,8 +9,8 @@ import { store, persistor, history } from './redux/store';
 import ExampleContainer from './containers/ExampleContainer';
 import { initSentry } from './services/sentry';
 
-require('./styles/reset.scss');
-require('./styles/global.scss');
+import './styles/reset.scss';
+import './styles/global.scss';
 
 initSentry();
 
