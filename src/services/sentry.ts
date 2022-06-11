@@ -5,7 +5,7 @@ export const initSentry = (): void => {
   Sentry.init({
     dsn: process.env.REACT_APP_SENTRY_DSN,
     integrations: [new Integrations.BrowserTracing()],
-    tracesSampleRate: process.env.REACT_APP_SENTRY_TRACES_SAMPLE_RATE,
+    tracesSampleRate: Number(process.env.REACT_APP_SENTRY_TRACES_SAMPLE_RATE),
     environment: process.env.REACT_APP_SENTRY_ENVIRONMENT,
   });
 };
