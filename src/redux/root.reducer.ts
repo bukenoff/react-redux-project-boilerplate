@@ -1,20 +1,18 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { createBrowserHistory } from 'history';
 
-import things_Reducer from './things/things.reducers';
+import things_reducer from './things/things.reducers';
 // import moduleNameReducer from './module_folder_name/reducers';
 
 const thingsPersistConfig = {
-  key: 'auth',
+  key: 'thisngs_list',
   storage,
 };
 
-const rootReducer = (history: ReturnType<typeof createBrowserHistory>) =>
-  combineReducers({
-    things: persistReducer(thingsPersistConfig, things_Reducer),
-    // moduleName: moduleNameReducer,
-  });
+const rootReducer = combineReducers({
+  things: persistReducer(thingsPersistConfig, things_reducer),
+  // moduleName: moduleNameReducer,
+});
 
 export default rootReducer;
