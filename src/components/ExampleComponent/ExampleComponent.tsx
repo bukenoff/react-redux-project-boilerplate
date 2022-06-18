@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as styles from './styles.scss';
 
 export interface Props {
   text: string;
@@ -7,7 +6,7 @@ export interface Props {
 
 const ExampleComponent: React.FC<Props> = ({ text }) => {
   return (
-    <div data-testid="example-component" className={styles.container}>
+    <div data-testid="example-component">
       <h1>{text}</h1>
     </div>
   );

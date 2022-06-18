@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { useTranslation, Trans } from 'react-i18next';
 
 import { State } from '~/types';
-import * as styles from './styles.scss';
 import * as actions from '~/redux/things/things.actions';
 
 import ExampleComponent from '~/components/ExampleComponent';
@@ -23,7 +22,7 @@ const ExampleContainer: FC<Props> = ({ things_list, addThing }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles.container}>
+    <div>
       <ExampleComponent text={t('exampleContainer.wellcomeText')} />
     </div>
   );

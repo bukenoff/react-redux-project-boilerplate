@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { persistStore } from 'redux-persist';
-import { routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 
 import root_saga from './root.saga';
@@ -22,7 +21,7 @@ const composeEnhancers =
 const store = createStore(
   root_reducer(history),
   initial_state,
-  composeEnhancers(applyMiddleware(saga_middleware, routerMiddleware(history))),
+  composeEnhancers(applyMiddleware(saga_middleware)),
 );
 
 const persistor = persistStore(store);
